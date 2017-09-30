@@ -1,29 +1,50 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 body {
   font-family:'Nanum Gothic';
   width: 100%;
 }
 
 canvas {
-  /*border: 1px solid black;*/
   position: relative;
+}
+
+.main-container {
+  position: relative;
+  width:100%;
 }
 
 .hidden {
   opacity: 0;
 }
+
 .clear {
   clear: both;
 }
+.one-third {
+  width: 33.3333%;
+  text-align: center;
+  float: left;
+}
+
+.one-half {
+  width: 50%;
+  float: left;
+  position: relative;
+  height: 100%;
+}
+
+/**** HERO *****/
 .hero {
-  height:750px;
+  height:700px;
   text-align: center;
   overflow: hidden;
   position: relative;
 }
 
 .hero img {
-  height: 150px;
+  max-height: 150px;
   width: auto;
+  max-width: 100%;
 }
 
 .hero p {
@@ -32,6 +53,7 @@ canvas {
   font-size: 22px;
   letter-spacing: 0.75px;
 }
+
 #blurb {
   position: absolute;
   top: 50%;
@@ -49,28 +71,21 @@ canvas {
   background-attachment: fixed;
 }
 
+
+/**** RESULTS *****/
 .results {
   opacity:0;
-  height: 180px;
+  height: auto;
   position: relative;
+  padding: 30px 0px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .results img {
-  max-width: 50%;
-  height:auto;
+  max-height: 110px;
+  max-width: 100%;
 
-}
-.one-third {
-  width: 33.3333%;
-  text-align: center;
-  float: left;
-}
-
-.one-half {
-  width: 50%;
-  float: left;
-  position: relative;
-  height: 100%;
 }
 .results-container {
   width: 90%;
@@ -79,10 +94,11 @@ canvas {
   top: 50%;
   transform: translate(-50%,-50%);
 }
+
+/**** OVERVIEW *****/
 .overview-section {
   opacity: 0;
-  padding-top: 50px;
-  padding-bottom: 30px;
+  padding: 100px 0;
   height: auto;
   background: #1184C2;
   background-image: linear-gradient(-126deg, #965DE2 0%, #1184C2 70%);
@@ -104,7 +120,6 @@ canvas {
   position: relative;
   margin: 0 auto;
   letter-spacing: 0.4px;
-
 }
 
 .disclaimer {
@@ -112,16 +127,19 @@ canvas {
   font-size: 13px;
   width: 80%;
   position: absolute;
-  bottom: 0px;
+  bottom: 20px;
   left: 5%;
 }
 
+
+/**** HOW IT WORKS *****/
 .how-it-works {
   position: relative;
   width: 85%;
   margin: 0 auto;
   color: #5A0BC3;
   height: 1600px;
+  opacity: 0;
 }
 
 
@@ -153,45 +171,49 @@ canvas {
   line-height: 25px;
 }
 
-
 #stage1 {
   left: 0px;
 }
 
 #stage2 {
   float: right;
+  opacity: 0;
 }
 #stage3 {
   float:left;
+  opacity:0;
 }
 
 #stage4 {
   left: 50%;
   transform: translateX(-50%);
+  opacity: 0;
 }
 
 #line1 {
   width: 65%;
   height: 300px;
   float:left;
-  opacity: 0;
+  opacity:0;
 }
 
 #line2 {
   float: right;
   width: 60%;
   height: 300px;
+  opacity:0;
 }
 
 #line3 {
   width: 100%;
   height: 150px;
   float: left;
+  opacity: 0;
 }
 
 .order-button {
   padding: 10px 0px;
-  width: 500px;
+  width: 50%;
   background-color: #5A0BC3;
   color: white;
   text-align: center;
@@ -205,6 +227,8 @@ canvas {
   font-weight: 500;
 }
 
+
+/**** TESTIMONIALS *****/
 .testimonials-section {
   position: relative;
   width: 100%;
@@ -225,6 +249,7 @@ canvas {
   text-align: center;
   padding-top:20px;
 }
+
 .bubble {
   position: relative;
   background-color: white;
@@ -237,20 +262,18 @@ canvas {
   transform: scale(0,0);
 }
 
-
 .bubble:before {
-    left: 50%;
-    transform: translateX(-50%);
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0; 
-    bottom: -15px;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 16px solid #FFF; 
+  left: 50%;
+  transform: translateX(-50%);
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0; 
+  bottom: -15px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 16px solid #FFF; 
 }
-
 
 .testimonial-icon {
   margin-top: 30px;
@@ -264,12 +287,97 @@ canvas {
   color: white;
 }
 
+
+/**** FOOTER *****/
 .footer-links {
   text-align: center;
   padding: 25px 0px;
 }
+
 .footer-links a {
   color: #383838;
   text-decoration: none;
   padding: 0px 25px;
+}
+
+
+/**** TABLET *****/
+@media (max-device-width: 800px) {
+  .one-half {
+    width: 100%;
+  }
+  .overview-section {
+    padding: 50px 0px;
+  }
+  .overview-section img {
+    margin-left: -5%;
+  }
+}
+
+/**** SMART PHONE *****/
+@media (max-device-width: 700px) {
+  .one-third {
+    width: 100%;
+  }
+
+  #blurb {
+    width: 90%;
+  }
+
+  .results img {
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+
+  .disclaimer {
+    bottom: 10px;
+  }
+
+  .how-it-works {
+    height: auto;
+  }
+
+  .stage {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  #stage2 {
+    opacity: 1;
+  }
+
+  #stage3 {
+    opacity: 1;
+  }
+
+  #stage4 {
+    opacity: 1;
+  }
+
+  .line {
+    display: none;
+  }
+  
+  canvas {
+    display: none;
+  }
+
+  .order-button {
+    position: relative;
+    width: 80%;
+  }
+
+  .testimonial {
+    width: 95%;
+  }
+
+  .bubble {
+    padding: 30px;
+  }
+
+  .footer-links a {
+    padding: 0 5px;
+  }
+
 }
