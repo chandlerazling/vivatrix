@@ -210,7 +210,7 @@ $(document).ready(function() {
     amount = $(document).scrollTop()/100;
     $("#blurb").css({"-webkit-filter": "blur("+amount+"px)","-moz-filter": "blur("+amount+"px)","filter": "blur("+amount+"px)" });
     $("#hero-background").css({"-webkit-filter": "blur("+amount+"px)","-moz-filter": "blur("+amount+"px)","filter": "blur("+amount+"px)" });
-     /***
+     
     if (cameIntoView($('.results'), 1/3)) {
       // Test if Results section has come into view and fade in if so
       $('.results').velocity('fadeIn', {duration: 1400});
@@ -224,7 +224,7 @@ $(document).ready(function() {
     } else if (cameIntoView($('.how-it-works'), 1/8)) {
       // Test if How It Works has come into view and fade in if so
       $('.how-it-works').velocity({opacity: 1});
-      if ($(window).width() < $(window).height()) {
+      if ($(window).width() < $(window).height() && $(window).width() > 700) {
         //If device is portrait view, animate all lines and stages at once
         $('#line1').css({'opacity': 1});
         $('.how-it-works').velocity("scroll", {offset: -1 * $('#stage1').height(), complete: function() {animateStage2()}});
@@ -233,9 +233,7 @@ $(document).ready(function() {
         $('#line3').css({'opacity': 1});
         animateStage4();
       }
-    }
-
-    else if (cameIntoView($('#line1'),1/3)) {
+    } else if (cameIntoView($('#line1'),1/3)) {
       // If scrolled past first stage, animate to second stage
         $('#line1').css({'opacity': 1});
         $('#line1').velocity("scroll", {complete: function() {animateStage2()}});
@@ -251,10 +249,10 @@ $(document).ready(function() {
   
     for (var i = 0; i < $('.bubble').length; i++) {
       // For each testimonial bubble, check if it's in view and if so pop it up
-      if (cameIntoView($($('.bubble')[i]), 1/2)) {
+      if (cameIntoView($($('.bubble')[i]), 1/3)) {
         showBubble($($('.bubble')[i]));
       }
-    }  **/    
+    }    
   });
 
 });
