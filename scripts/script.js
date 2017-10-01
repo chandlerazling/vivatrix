@@ -204,8 +204,9 @@ $(document).ready(function() {
     drawLine2Static();
     drawLine3Static();
   });
+  /***
   $(window).scroll(function() {
-    /*** Blur the hero as user scrolls **/
+    //Blur the hero as user scrolls
     amount = $(document).scrollTop()/100;
     $("#blurb").css({"-webkit-filter": "blur("+amount+"px)","-moz-filter": "blur("+amount+"px)","filter": "blur("+amount+"px)" });
     $("#hero-background").css({"-webkit-filter": "blur("+amount+"px)","-moz-filter": "blur("+amount+"px)","filter": "blur("+amount+"px)" });
@@ -233,7 +234,7 @@ $(document).ready(function() {
       }
     }
 
-    /***else if (cameIntoView($('#line1'),1/3)) {
+    else if (cameIntoView($('#line1'),1/3)) {
       // If scrolled past first stage, animate to second stage
         $('#line1').css({'opacity': 1});
         $('#line1').velocity("scroll", {complete: function() {animateStage2()}});
@@ -246,13 +247,13 @@ $(document).ready(function() {
        $('#line3').css({'opacity': 1});
        $('#line3').velocity("scroll", {offset: -1 * $('#stage3 p').height(), complete: function() {animateStage4()}});
     }
-    **/
+  
     for (var i = 0; i < $('.bubble').length; i++) {
-      /** For each testimonial bubble, check if it's in view and if so pop it up **/
+      // For each testimonial bubble, check if it's in view and if so pop it up
       if (cameIntoView($($('.bubble')[i]), 1/2)) {
         showBubble($($('.bubble')[i]));
       }
     }      
-  });
+  });  **/
 
 });
