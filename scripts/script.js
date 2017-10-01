@@ -204,12 +204,13 @@ $(document).ready(function() {
     drawLine2Static();
     drawLine3Static();
   });
-  /***
+ 
   $(window).scroll(function() {
     //Blur the hero as user scrolls
     amount = $(document).scrollTop()/100;
     $("#blurb").css({"-webkit-filter": "blur("+amount+"px)","-moz-filter": "blur("+amount+"px)","filter": "blur("+amount+"px)" });
     $("#hero-background").css({"-webkit-filter": "blur("+amount+"px)","-moz-filter": "blur("+amount+"px)","filter": "blur("+amount+"px)" });
+     /***
     if (cameIntoView($('.results'), 1/3)) {
       // Test if Results section has come into view and fade in if so
       $('.results').velocity('fadeIn', {duration: 1400});
@@ -253,7 +254,7 @@ $(document).ready(function() {
       if (cameIntoView($($('.bubble')[i]), 1/2)) {
         showBubble($($('.bubble')[i]));
       }
-    }      
-  });  **/
+    }  **/    
+  });
 
 });
