@@ -209,22 +209,21 @@ $(document).ready(function() {
     amount = $(document).scrollTop()/100;
     $("#blurb").css({"-webkit-filter": "blur("+amount+"px)","-moz-filter": "blur("+amount+"px)","filter": "blur("+amount+"px)" });
     $("#hero-background").css({"-webkit-filter": "blur("+amount+"px)","-moz-filter": "blur("+amount+"px)","filter": "blur("+amount+"px)" });
-
     if (cameIntoView($('.results'), 1/3)) {
-      /** Test if Results section has come into view and fade in if so **/
+      // Test if Results section has come into view and fade in if so
       $('.results').velocity('fadeIn', {duration: 1400});
     } else if (cameIntoView($('.overview-section'), 1/3)) {
-      /** Test if Overview Section has come into view and fade in if so **/
+      // Test if Overview Section has come into view and fade in if so
       $('.overview-section').velocity({opacity: 1});
       $.Velocity.hook($('.overview-section img'), "translateY", '100%');
       $.Velocity.hook($('.description'), "translateY", '100%');
       $('.overview-section img').velocity({translateY: 0}, {duration: 1100, easing: 'EaseInOutQuart'});
       $('.description').velocity({translateY:0}, {duration: 800, easing: 'EaseInOutQuart'});
     } else if (cameIntoView($('.how-it-works'), 1/8)) {
-      /** Test if How It Works has come into view and fade in if so **/
+      // Test if How It Works has come into view and fade in if so
       $('.how-it-works').velocity({opacity: 1});
       if ($(window).width() < $(window).height()) {
-        /** If device is portrait view, animate all lines and stages at once **/
+        //If device is portrait view, animate all lines and stages at once
         $('#line1').css({'opacity': 1});
         $('.how-it-works').velocity("scroll", {offset: -1 * $('#stage1').height(), complete: function() {animateStage2()}});
         $('#line2').css({'opacity': 1});
@@ -232,20 +231,22 @@ $(document).ready(function() {
         $('#line3').css({'opacity': 1});
         animateStage4();
       }
-    } else if (cameIntoView($('#line1'),1/3)) {
-      /** If scrolled past first stage, animate to second stage **/
+    }
+
+    /***else if (cameIntoView($('#line1'),1/3)) {
+      // If scrolled past first stage, animate to second stage
         $('#line1').css({'opacity': 1});
         $('#line1').velocity("scroll", {complete: function() {animateStage2()}});
-    } else if (cameIntoView($('#line2'), 1/2)) {
-       /** If scrolled past second stage, animate to third stage **/
+    }  else if (cameIntoView($('#line2'), 1/3)) {
+       // If scrolled past second stage, animate to third stage 
         $('#line2').css({'opacity': 1});
         $('#line2').velocity("scroll", {offset: -1 * $('#stage2').height(), complete: function() {animateStage3()}});
     } else if (cameIntoView($('#line3'), 1/2)) {
-       /** If scrolled past third stage, animate to fourth stage **/
+       //If scrolled past third stage, animate to fourth stage 
        $('#line3').css({'opacity': 1});
        $('#line3').velocity("scroll", {offset: -1 * $('#stage3 p').height(), complete: function() {animateStage4()}});
     }
-
+    **/
     for (var i = 0; i < $('.bubble').length; i++) {
       /** For each testimonial bubble, check if it's in view and if so pop it up **/
       if (cameIntoView($($('.bubble')[i]), 1/2)) {
